@@ -1,4 +1,5 @@
-from ml_api import app
+from ml_api import app, cifar_detection_model, cifar_cnn_detection_model
+
 from flask import request, jsonify, render_template
 from werkzeug.utils import secure_filename
 from .utils.prediction_function import make_prediction
@@ -61,7 +62,7 @@ def predict_with_front():
         file.save(path)
 
         #make a prediction
-        class_name, prob = make_prediction(path)
+        class_name, prob = make_prediction(path, cifar_cnn_detection_model)
 
         #Delete tmp image file
         if os.path.isfile(path):
@@ -110,7 +111,7 @@ def predict():
         file.save(path)
 
         #make a prediction
-        class_name, prob = make_prediction(path)
+        class_name, prob = make_prediction(path, cifar_cnn_detection_model)
 
         #Delete tmp image file
         if os.path.isfile(path):
