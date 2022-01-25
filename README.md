@@ -17,7 +17,7 @@ You can acces to the model [here](https://drive.google.com/drive/folders/175HlLG
 
 ### Acuracy
 
-- CNN model: 80%
+- CNN model: 84%
 - VGG16: 77%
 
 ### Confusion matrix
