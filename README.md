@@ -66,4 +66,4 @@ From the confusion matrix, it is possible to observe, on one hand, that the "cat
 | macro avg    | 0.8483552264591532 | 0.8463128698963441 | 0.8457875965540195 | 6000.0  |
 | weighted avg | 0.8484843978704993 | 0.846              | 0.8456679781259134 | 6000.0  |
 
-Looking both tables, it is possible to classify the classes in two groups: confusing classes and well-predicted classes.
+Looking both tables, it is possible to classify the classes in two groups: hard-predicted classes and well-predicted classes. In the case of the Xception model,  the hard-predicted set include cat, deer, dog, frog; while the other classes are part of the well-predicted group.
