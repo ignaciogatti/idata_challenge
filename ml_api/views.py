@@ -1,4 +1,4 @@
-from ml_api import app, cifar_detection_model, cifar_cnn_detection_model
+from ml_api import app, cifar_xception_detection_model, cifar_cnn_detection_model
 
 from flask import request, jsonify, render_template
 from werkzeug.utils import secure_filename
@@ -78,14 +78,14 @@ def predict_with_front():
 
 
 
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/predictcnn', methods=['POST'])
+def predict_cnn():
     '''
     Endpoint that take an image as input and try to detect which object it is
     Args:
       file: a valid image file
     Return:
-      JSON with class name and prob
+      JSON with model name, class name and prob
     '''
 
 
@@ -119,6 +119,59 @@ def predict():
 
         #Everything works fine
         return jsonify({
+            'model': 'cnn',
+            'className' : class_name,
+            'prob': str(prob)
+        })
+
+    return jsonify({
+            'error': 'Something goes wrong'
+        })
+
+
+
+@app.route('/predictxception', methods=['POST'])
+def predict_xception():
+    '''
+    Endpoint that take an image as input and try to detect which object it is
+    Args:
+      file: a valid image file
+    Return:
+      JSON with model name, class name and prob
+    '''
+
+
+    # check if the post request has the file part 
+    if 'file' not in request.files:
+        return jsonify({
+            'error': 'No file'
+        })
+    
+    file = request.files['file']
+    # If the user does not select a file, the browser submits an
+    # empty file without a filename.
+    if file.filename == '':
+        return jsonify({
+            'error': 'Empty file'
+        })
+    
+    
+    if file and allowed_file(file.filename):
+        #Upload image
+        filename = secure_filename(file.filename)
+        path = os.path.join(os.getcwd(), 'ml_api/download_images/' + filename)
+        file.save(path)
+
+        #make a prediction
+        class_name, prob = make_prediction(path, cifar_xception_detection_model)
+
+        #Delete tmp image file
+        if os.path.isfile(path):
+            os.remove(path)
+
+        #Everything works fine
+        return jsonify({
+            'model': 'xcepetion',
             'className' : class_name,
             'prob': str(prob)
         })
