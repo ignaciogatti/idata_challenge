@@ -21,3 +21,7 @@ You can acces to the model [here](https://drive.google.com/drive/folders/175HlLG
 - VGG16: 77%
 
 ### Confusion matrix
+
+![Consfusion matrix](https://github.com/ignaciogatti/idata_challenge/blob/main/images/confusion_matrix.png)
+
+From the confusion matrix, it is possible to observe, on one hand, that the "cat" is the hardest class to predict for both models; and on the hand, for each model the rate of true positive is quite similar around all classes. 
