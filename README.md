@@ -12,6 +12,12 @@ Also, I developed a REST API to expose the model. For this purpose I used [Flask
 
 You can acces to the model [here](https://drive.google.com/drive/folders/175HlLGUiLHWZw8YcJofASzNajTS3id6g?usp=sharing)
 
+# Models training
+
+All models were trained on a machine with the following specifications:
+- CPU: 2 Ghz Quad-Core Intel i5
+- Memory: 16 GB
+
 
 # Models evaluation
 
