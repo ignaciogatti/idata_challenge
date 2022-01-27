@@ -89,4 +89,6 @@ Looking both tables, it is possible to classify the classes in two groups: hard-
 
 In the case of the Xception model (without fine-tuning), the hard-predicted set include cat, deer, dog, frog; while the other classes are part of the well-predicted group. While in the CNN model, the hard-predicted classes set include cat and dog.
 
-Finally, in the case of the Xception model (with fine-tuning), all the precision per classes are higher than 0.8. Looking at the hard-predicted set in the model without fine-tuning, it is possible to observe that the model with fine-tuning made a great improvement in the following classes: deer, frog and cat; while the dog class is the hardest class to predict.
+Finally, in the case of the Xception model (with fine-tuning), all the precision per classes are higher than 0.8. Looking at the hard-predicted set in the model without fine-tuning, it is possible to observe that the model with fine-tuning made a great improvement in the following classes: deer, frog and cat; while the dog class is the hardest class to predict (the ROC curve shows this improvement).
+
+![ROC curve](https://github.com/ignaciogatti/idata_challenge/blob/main/images/auc_roc_curve.png)
