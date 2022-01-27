@@ -30,7 +30,7 @@ From the confusion matrix, it is possible to observe, on one hand, that the "cat
 
 ### Precision/Recall report
 
-#### Xception model
+#### Xception model (without fine-tuning)
 
 |              | precision          | recall             | f1-score           | support            |
 |--------------|--------------------|--------------------|--------------------|--------------------|
@@ -48,6 +48,24 @@ From the confusion matrix, it is possible to observe, on one hand, that the "cat
 | macro avg    | 0.7765572851805793 | 0.7730597020989702 | 0.7728783410250369 | 6000.0             |
 | weighted avg | 0.7764308370702534 | 0.7728333333333334 | 0.7726875979563305 | 6000.0             |
 
+
+#### Xception (with fine-tuning)
+
+|              | precision          | recall             | f1-score           | support |
+|--------------|--------------------|--------------------|--------------------|---------|
+| airplane     | 0.9131175468483816 | 0.9225473321858864 | 0.9178082191780822 | 581.0   |
+| automobile   | 0.9425675675675675 | 0.9425675675675675 | 0.9425675675675675 | 592.0   |
+| bird         | 0.9194078947368421 | 0.8873015873015873 | 0.9030694668820678 | 630.0   |
+| cat          | 0.8460111317254174 | 0.7768313458262351 | 0.8099467140319716 | 587.0   |
+| deer         | 0.8624420401854714 | 0.8913738019169329 | 0.8766692851531814 | 626.0   |
+| dog          | 0.8062015503875969 | 0.8858603066439523 | 0.8441558441558442 | 587.0   |
+| frog         | 0.9370748299319728 | 0.915282392026578  | 0.9260504201680673 | 602.0   |
+| horse        | 0.9066666666666666 | 0.912751677852349  | 0.9096989966555183 | 596.0   |
+| ship         | 0.9398998330550918 | 0.9526226734348562 | 0.9462184873949581 | 591.0   |
+| truck        | 0.9478991596638655 | 0.9276315789473685 | 0.9376558603491272 | 608.0   |
+| accuracy     | 0.9015             | 0.9015             | 0.9015             | 0.9015  |
+| macro avg    | 0.9021288220768874 | 0.9014770263703313 | 0.9013840861536385 | 6000.0  |
+| weighted avg | 0.9022969502205227 | 0.9015             | 0.9014843929551437 | 6000.0  |
 
 #### CNN model
 
@@ -69,4 +87,6 @@ From the confusion matrix, it is possible to observe, on one hand, that the "cat
 
 Looking both tables, it is possible to classify the classes in two groups: hard-predicted classes and well-predicted classes. The first group contains the classes with low precision score (>0.8), and the other one contains classes wit better precision score (<0.8).
 
-In the case of the Xception model, the hard-predicted set include cat, deer, dog, frog; while the other classes are part of the well-predicted group. While in the CNN model, the hard-predicted classes set include cat and dog.
+In the case of the Xception model (without fine-tuning), the hard-predicted set include cat, deer, dog, frog; while the other classes are part of the well-predicted group. While in the CNN model, the hard-predicted classes set include cat and dog.
+
+Finally, in the case of the Xception model (with fine-tuning), all the precision per classes are higher than 0.8. Looking at the hard-predicted set in the model without fine-tuning, it is possible to observe that the model with fine-tuning made a great improvement in the following classes: deer, frog and cat; while the dog class is the hardest class to predict.
