@@ -18,6 +18,10 @@ All models were trained on a machine with the following specifications:
 - CPU: 2 Ghz Quad-Core Intel i5
 - Memory: 16 GB
 
+### CNN model
+
+This model was designed with three blocks. Each block contains two Convolutional layers and one MaxPooling layer. The input size of the model is 32x32x3. 
+
 
 # Models evaluation
 
