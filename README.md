@@ -20,7 +20,12 @@ All models were trained on a machine with the following specifications:
 
 ### CNN model
 
-This model was designed with three blocks. Each block contains two Convolutional layers and one MaxPooling layer. The input size of the model is 32x32x3. 
+This model was designed with three blocks. Each block contains two Convolutional layers and one MaxPooling layer. The input size of the model is 32x32x3.
+
+
+### Xception
+
+This model was defined using Xception architecture. Also the model used imagenet weights. The input size of the model is 96x96x3. Because the CIFAR-10 dataset contains image of 32x32x3, these must be resized first to fit into the model. 
 
 
 # Models evaluation
