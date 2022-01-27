@@ -5,7 +5,7 @@ This repository implements a couple of DNN models to solve the well-known [CIFAR
 Basically, in this case I used two models:
 
 - A custom CNN model trained from scratch
-- A pre-trained [VGG16](https://www.tensorflow.org/api_docs/python/tf/keras/applications/vgg16/VGG16) model. In this case, only the head was trained in order to fit with the classes of the dataset.
+- A pre-trained [Xception](https://www.tensorflow.org/api_docs/python/tf/keras/applications/xception/Xception) model. In this case, only the head was trained in order to fit with the classes of the dataset.
 
 
 Also, I developed a REST API to expose the model. For this purpose I used [Flask](https://flask.palletsprojects.com/en/2.0.x/).
@@ -18,7 +18,8 @@ You can acces to the model [here](https://drive.google.com/drive/folders/175HlLG
 ### Acuracy
 
 - CNN model: 85%
-- VGG16: 77%
+- Xception (without fine-tuning): 77%
+- Xception (with fine-tuning): 90%
 
 ### Confusion matrix
 
